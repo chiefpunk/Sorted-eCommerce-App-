@@ -266,7 +266,7 @@ const styles = StyleSheet.create({
     img_container: {
         height: (Dimensions.get("window").height),
 
-        backgroundColor: '#eb9da8'
+        backgroundColor: '#ffffff'
     },
     profile_data_bg: {
         flexDirection: 'row',

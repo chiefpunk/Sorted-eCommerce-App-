@@ -60,7 +60,7 @@ export default class DashBoard extends Component {
 
   renderIcon = tab => ({ isActive }) => (
     //    <Icon style={{fontSize:24, color:tab.key === this.state.activeTab ? 'black':'white' }} name={tab.icon} type={tab.type}/> 
-    <Icon style={{ fontSize: moderateScale(24), color: '#00227b' }} name={tab.icon} type={tab.type} />
+    <Icon style={{ fontSize: moderateScale(24), color: '#000000' }} name={tab.icon} type={tab.type} />
   )
   renderTab = ({ tab, isActive }) => (
     <ShiftingTab
@@ -259,11 +259,11 @@ const styles = StyleSheet.create({
   },
   img_container: {
     height: (Dimensions.get("window").height),
-    backgroundColor: '#85414d'
+    backgroundColor: '#ffffff'
   },
   list_profile_container: {
     height: (Dimensions.get("window").height * 0.85),
-    backgroundColor: '#eb9da8'
+    backgroundColor: '#ffffff'
   },
   profile_data_bg: {
     flexDirection: 'row',

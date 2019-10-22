@@ -253,7 +253,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     borderRadius: 40,
     width: Dimensions.get('window').width * 0.8,
-    backgroundColor: "rgba(255,255,255,0.3)"
+    backgroundColor: "rgba(169,169,169,0.7)"
   },
   sign_in_btn: {
     backgroundColor: "#85414d",
@@ -276,7 +276,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     justifyContent: "center",
     fontFamily: font_type.FontBold,
-    color: 'white',
+    color: 'black',
     fontSize: moderateScale(17),
     marginTop: 25
   },

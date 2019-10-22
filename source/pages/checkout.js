@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, StatusBar, ScrollView, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import { Container, Header, List, ListItem, Left,Title, Right, Body, Icon, Separator, Item, Form, Label, Radio, Button } from 'native-base';
+import { CreditCardInput, LitecreditCardInput} from "react-native-credit-card-input";
 import { Input } from 'react-native-elements';
 import PhoneInput from 'react-native-phone-input';
 const { width: WIDTH } = Dimensions.get('window');
@@ -16,6 +17,7 @@ const font_type = {
 
 export default class Checkout extends Component {
     render() {
+        _onChange => form => console.log(form);
         return (
             <Container>
                 <StatusBar backgroundColor="#ff6347" barStyle="light-content" />
@@ -46,7 +48,7 @@ export default class Checkout extends Component {
                             <Input placeholder='e.g.Building name/Street' placeholderTextColor="grey"></Input>
                         </Item>
                         <Item stackedLabel>
-                            <Label style={{ fontSize: 20, color:"black" }}>Apartment# /Hotel Room# /Villa#</Label>
+                            <Label style={{ fontSize: 20, color:"black" }}>Apartment# / Villa#</Label>
                             <Input placeholder='e.g.Apartment 2101' placeholderTextColor="grey"></Input>
                         </Item>
                     </Form>
@@ -59,39 +61,18 @@ export default class Checkout extends Component {
                         <Input placeholder='First Name' placeholderTextColor="grey"></Input>
                         <Input placeholder='Last Name' placeholderTextColor="grey"></Input>   
                         <Input placeholder='Email*' placeholderTextColor="grey"></Input>
-                        <PhoneInput ref='phone' style={{marginLeft:20, marginTop:15}} />
+                        <Input placeholder='Phone Number*' placeholderTextColor="grey"></Input>
+                        
                     </View>
                     <List>
                         <Separator bordered>
-                            <Text>SCHEDULE DELIVERY</Text>
+                            <Text>ADD CARD</Text>
                         </Separator>
-                        <ListItem>
-                            <Left>
-                                <Text>Today</Text>
-                            </Left>
-                            <Right>
-                                <Radio selected="true" />
-                            </Right>
-                        </ListItem>
-                        <ListItem>
-                            <Left>
-                                <Text>Tomorrow</Text>
-                            </Left>
-                            <Right>
-                                <Radio selected="true" />
-                            </Right>
-                        </ListItem>
-                        <ListItem>
-                            <Left>
-                                <Text>2-3 Days (Free)</Text>
-                            </Left>
-                            <Right>
-                                <Radio selected="true" />
-                            </Right>
-                        </ListItem>
+                        <CreditCardInput onchange={this._onChange} />
+                        
                         <ListItem style={{ alignItems: 'center', justifyContent: 'center' }}>
                             <Button block success style={{ width: '95%', backgroundColor: "#85414d" }} onPress={()=>this.props.navigation.navigate("Checkout")}>
-                                <Text style={{ color: 'white', fontSize: moderateScale(14) }}>SAVE AND CONTINUE</Text>
+                                <Text style={{ color: 'white', fontSize: moderateScale(14) }}>PAY AND CONTINUE</Text>
                             </Button>
                         </ListItem>
                     </List>
